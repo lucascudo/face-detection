@@ -1,14 +1,4 @@
-// Imports the Google Cloud client libraries
-const vision = require('@google-cloud/vision');
-
-// Creates a client
-const client = new vision.ImageAnnotatorClient();
-
-// Performs face detection on the gcs file
-async function detectFaces(imgPath) {
-    const [result] = await client.faceDetection(imgPath);
-    return result.faceAnnotations;
-}
+const Vision = require('@google-cloud/vision');
 
 function main() {
     if (!process.argv[2]) {
@@ -23,6 +13,12 @@ function main() {
         console.log(`    Sorrow: ${face.sorrowLikelihood}`);
         console.log(`    Surprise: ${face.surpriseLikelihood}`);
     }));
+}
+
+async function detectFaces(imgPath) {
+    const client = new Vision.ImageAnnotatorClient();
+    const [result] = await client.faceDetection(imgPath);
+    return result.faceAnnotations;
 }
 
 main();
