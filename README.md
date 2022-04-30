@@ -1,4 +1,4 @@
-# NodeJS facial detection
+# Node.js facial detection
 
 ## Usage
 
