@@ -6,7 +6,7 @@ function main() {
         return;
     }
     console.log('Faces:');
-    detectFaces(process.argv[2]).then((faces, i) => faces.forEach((face, i) => {
+    detectFaces(process.argv[2]).then((faces) => faces.forEach((face, i) => {
         console.log(`  Face #${i + 1}:`);
         console.log(`    Joy: ${face.joyLikelihood}`);
         console.log(`    Anger: ${face.angerLikelihood}`);
