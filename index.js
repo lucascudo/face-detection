@@ -2,7 +2,7 @@ const Vision = require('@google-cloud/vision');
 
 function main() {
     if (!process.argv[2]) {
-        console.log('Missing image path. Usage: node indexjs <IMAGE_URL>');
+        console.log('Missing image path. Usage: node index.js <IMAGE_URL>');
         return;
     }
     console.log('Faces:');
